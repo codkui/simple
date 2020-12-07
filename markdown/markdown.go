@@ -8,7 +8,7 @@ import (
 	"github.com/iris-contrib/blackfriday"
 	"github.com/sirupsen/logrus"
 
-	"github.com/mlogclub/simple"
+	"github.com/codkui/simple"
 )
 
 // option
@@ -56,8 +56,7 @@ func (md *Markdown) Run(mdText string) (htmlStr, summary string) {
 			Flags: blackfriday.TOC,
 		}))
 	} else {
-		htmlRenderer = blackfriday.WithRenderer(blackfriday.NewHTMLRenderer(blackfriday.HTMLRendererParameters{
-		}))
+		htmlRenderer = blackfriday.WithRenderer(blackfriday.NewHTMLRenderer(blackfriday.HTMLRendererParameters{}))
 	}
 	data := blackfriday.Run([]byte(mdText), htmlRenderer)
 	if doc, err := md.doRender(data); err == nil {
