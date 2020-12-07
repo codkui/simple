@@ -17,7 +17,7 @@ require (
 	github.com/jinzhu/gorm v1.9.11
 	github.com/kataras/iris/v12 v12.2.0-alpha
 	github.com/mediocregopher/mediocre-go-lib v0.0.0-20181029021733-cb65787f37ed // indirect
-	github.com/codkui/simple v1.0.64
+	github.com/codkui/simple v1.0.65
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/sirupsen/logrus v1.4.2
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
