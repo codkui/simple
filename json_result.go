@@ -5,6 +5,7 @@ type JsonResult struct {
 	Message   string      `json:"message"`
 	Data      interface{} `json:"data"`
 	Success   bool        `json:"success"`
+	Time      int64       `json:"time"`
 }
 
 func Json(code int, message string, data interface{}, success bool) *JsonResult {
@@ -13,6 +14,7 @@ func Json(code int, message string, data interface{}, success bool) *JsonResult 
 		Message:   message,
 		Data:      data,
 		Success:   success,
+		Time:      NowTimestamp(),
 	}
 }
 
@@ -21,6 +23,7 @@ func JsonData(data interface{}) *JsonResult {
 		ErrorCode: 0,
 		Data:      data,
 		Success:   true,
+		Time:      NowTimestamp(),
 	}
 }
 
@@ -43,6 +46,7 @@ func JsonSuccess() *JsonResult {
 		ErrorCode: 0,
 		Data:      true,
 		Success:   true,
+		Time:      NowTimestamp(),
 	}
 }
 
@@ -52,6 +56,7 @@ func JsonError(err *CodeError) *JsonResult {
 		Message:   err.Message,
 		Data:      err.Data,
 		Success:   false,
+		Time:      NowTimestamp(),
 	}
 }
 
@@ -61,6 +66,7 @@ func JsonErrorMsg(message string) *JsonResult {
 		Message:   message,
 		Data:      nil,
 		Success:   false,
+		Time:      NowTimestamp(),
 	}
 }
 
@@ -70,6 +76,7 @@ func JsonErrorCode(code int, message string) *JsonResult {
 		Message:   message,
 		Data:      nil,
 		Success:   false,
+		Time:      NowTimestamp(),
 	}
 }
 
@@ -79,6 +86,7 @@ func JsonErrorData(code int, message string, data interface{}) *JsonResult {
 		Message:   message,
 		Data:      data,
 		Success:   false,
+		Time:      NowTimestamp(),
 	}
 }
 
